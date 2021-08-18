@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ValidatePhoneNumber;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateListingRequests extends FormRequest
@@ -27,8 +28,8 @@ class CreateListingRequests extends FormRequest
             'name' => 'required|string',
             'description' => 'required|string',
             'condition' => 'required|string',
-            'whatsapp_number' => 'nullable|string',
-            'cell_number' => 'required|string',
+            'whatsapp_number' =>new ValidatePhoneNumber(),
+            'cell_number' => new ValidatePhoneNumber(),
             'email' => 'nullable|email',
             'location' => 'required|string',
             'category' => 'required|string',
@@ -41,4 +42,5 @@ class CreateListingRequests extends FormRequest
             'image_3' => 'nullable|image|max:20480',
         ];
     }
+
 }

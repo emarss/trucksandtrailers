@@ -62,18 +62,16 @@
                         <span>{{ $listing->getPrice() }} <small>{{ $listing->currency }}</small></span>
                     </div>
                     <a href="tel:{{ $listing->cell_number }}" class=" add_top_30 btn_1 full-width purchase">Call Owner</a>
-                    <a href="sms:{{ $listing->cell_number }}" class="btn_1 full-width outline wishlist"><i class="fa fa-comment"></i> Sent SMS</a>
+                    <a href="sms:{{ $listing->cell_number }}" class="btn_1 full-width outline wishlist"><i class="fa fa-comment mr-2"></i> Sent SMS</a>
                     @if (strlen($listing->email) != 0)<a href="mailto:{{ $listing->email }}"
-                            class="btn_1 full-width outline wishlist"><i class="fa fa-envelope"></i> Sent Email</a>
+                            class="btn_1 full-width outline wishlist"><i class="fa fa-envelope mr-1"></i> Sent Email</a>
                     @endif
-                    @if (strlen($listing->email) != 0)<a href="https://wa.me/{{ $listing->whatsapp_number }}"
-                            class="btn_1 full-width outline wishlist"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+                    @if (strlen($listing->whatsapp_number) != 0)<a href="https://wa.me/{{ $listing->whatsapp_number }}"
+                            class="btn_1 full-width outline wishlist"><i class="fa fa-whatsapp mr-1"></i> WhatsApp</a>
                     @endif
                 </div>
                 <ul class="share-buttons">
-                    <li><a class="fb-share" href="#0"><i class="social_facebook"></i> Share</a></li>
-                    <li><a class="twitter-share" href="#0"><i class="social_twitter"></i> Share</a></li>
-                    <li><a class="gplus-share" href="#0"><i class="social_googleplus"></i> Share</a></li>
+                    <div class="sharethis-inline-share-buttons"></div>
                 </ul>
             </aside>
         </div>

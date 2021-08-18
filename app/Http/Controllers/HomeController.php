@@ -17,9 +17,9 @@ class HomeController extends Controller
     {
         $pageTitle = "Buy and Sell Trucks & Trailers";
         $listings = Listing::where('status', 1)
-                            ->orderBy('created_at', 'desc')
-                            ->orderBy('priority', 'desc')
-                            ->get();
+            ->orderBy('created_at', 'desc')
+            ->orderBy('priority', 'desc')
+            ->paginate(15);
         return view('index')
             ->withPageTitle($pageTitle)
             ->withListings($listings);
@@ -160,17 +160,26 @@ class HomeController extends Controller
     {
         $search = $request->input('search');
         $category = $request->input('category');
-        $pageTitle = "Results for '$search'";
 
-        $listings = Listing::where('name', "LIKE","%". $search. "%")->orWhere('description', "LIKE","%". $search. "%");
-        if($category != 0){
-            $listings = $listings->orWhere('category', $category)->get();
-        }else{
-            $listings = $listings->get();
+
+
+        if ($category > 0) {
+            $listings = Listing::where('category', $category)
+                ->where(function ($query) use ($search) {
+                    return $query->where('name', "LIKE", "%" . $search . "%")
+                    ->orWhere('description', "LIKE", "%" . $search . "%");
+                })
+                ->paginate(15);
+        } else {
+            $listings = Listing::where('name', "LIKE", "%" . $search . "%")->orWhere('description', "LIKE", "%" . $search . "%")->paginate(15);
         }
+
+        $pageTitle = $listings->total() . " results found.";
 
         return view('index')
             ->with([
+                'prevCategory' => $category,
+                'prevSearch' => $search,
                 'listings' => $listings,
                 'pageTitle' => $pageTitle,
             ]);

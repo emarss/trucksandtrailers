@@ -22,6 +22,7 @@
                 </a>
                 <nav id="menu" class="main-menu">
                     <ul>
+                        <li><span><a href="{{ route('add_listing') }}" class="btn_add d-lg-none">Add Listing</a></span></li>
                         <li><span><a href="{{ route('home') }}">Home</a></span></li>
                         <li><span><a href="#0">Categories</a></span>
                             <ul>

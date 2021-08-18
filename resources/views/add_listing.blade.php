@@ -40,7 +40,6 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="condition">Condition</label>
                             <select class="form-control condition" required name="condition">
-                                <option value="">Select condition</option>
                                 <option {{ old('condition') == 'new' ? 'selected' : '' }} value="new">New</option>
                                 <option {{ old('condition') == 'preowned' ? 'selected' : '' }} value="preowned">Preowned
                                 </option>
@@ -69,7 +68,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="cell_number">Cell Number</label>
-                            <input value="{{ old('cell_number') }}" required="" type="text" name="cell_number"
+                            <input pattern="[\+]\d{9,14}" title="Please, enter phone number in international format." value="{{ old('cell_number') }}" required="" type="text" name="cell_number"
                                 class="form-control" placeholder="Enter mobile number">
                             @error('cell_number')
                                 <div class="text-danger my-1">{{ $message }}</div>
@@ -78,7 +77,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="whatsapp_number">WhatsApp Number
                                 <i>(Optional)</i></label>
-                            <input value="{{ old('whatsapp_number') }}" required="" type="text" name="whatsapp_number"
+                            <input pattern="[\+]\d{9,14}" title="Please, enter phone number in international format." value="{{ old('whatsapp_number') }}"  type="text" name="whatsapp_number"
                                 class="form-control" placeholder="Enter Whatsapp Number">
                             @error('whatsapp_number')
                                 <div class="text-danger my-1">{{ $message }}</div>
@@ -98,7 +97,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="email">Email Address<i>(Optional)</i></label>
-                            <input value="{{ old('email') }}" required="" type="email" name="email" class="form-control"
+                            <input value="{{ old('email') }}" type="email" name="email" class="form-control"
                                 placeholder="Enter Email Address">
                             @error('email')
                                 <div class="text-danger my-1">{{ $message }}</div>
@@ -121,7 +120,6 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="currency">Currency</label>
                             <select class="form-control currency" required name="currency">
-                                <option value="">Select currency</option>
                                 <option {{ old('currency') == 'USD' ? 'selected' : '' }} value="USD">USD (United States
                                     Dollar)</option>
                                 <option {{ old('currency') == 'ZAR' ? 'selected' : '' }} value="ZAR">ZAR (South African

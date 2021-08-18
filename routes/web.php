@@ -23,6 +23,9 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::post('/contact', 'HomeController@feedback')->name('feedback');
 Route::post('/search', 'HomeController@searchListings')->name('search');
+Route::get('/search', function(){
+	return redirect()->route('home');
+});
 Route::post('/newsletter', 'HomeController@newsletter')->name('newsletter');
 Route::get('/add_listing', 'HomeController@addListing')->name('add_listing');
 Route::post('/save_listing', 'HomeController@saveListing')->name('save_listing');

@@ -1,10 +1,6 @@
 <script src="{{ asset('js/common_scripts.js') }}"></script>
 <script src="{{ asset('js/functions.js') }}"></script>
-
-<script src="{{ asset('http://maps.googleapis.com/maps/api/js') }}"></script>
 <script src="{{ asset('js/markerclusterer.js') }}"></script>
-<script src="{{ asset('js/map.js') }}"></script>
-<script src="{{ asset('js/infobox.js') }}"></script>
 
 
 @if (Session::has("feedback"))

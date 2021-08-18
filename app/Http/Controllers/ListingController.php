@@ -148,7 +148,6 @@ class ListingController extends Controller
         $listing = Listing::findOrFail($id);
 
         Listing::where('id', $id)->update([
-            'user_id' => auth()->user()->id,
             'name' => $request->input("name"),
             'description' => $request->input("description"),
             'condition' => $request->input("condition"),

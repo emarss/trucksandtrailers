@@ -91,7 +91,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="whatsapp_number">WhatsApp Number
                                 <i>(Optional)</i></label>
-                            <input value="{{ $listing->whatsapp_number }}" required="" type="text" name="whatsapp_number"
+                            <input value="{{ $listing->whatsapp_number }}" type="text" name="whatsapp_number"
                                 class="form-control" placeholder="Enter Whatsapp Number">
                             @error('whatsapp_number')
                                 <div class="text-danger my-1">{{ $message }}</div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label" for="email">Email Address<i>(Optional)</i></label>
-                            <input value="{{ $listing->email }}" required="" type="email" name="email" class="form-control"
+                            <input value="{{ $listing->email }}" type="email" name="email" class="form-control"
                                 placeholder="Enter Email Address">
                             @error('email')
                                 <div class="text-danger my-1">{{ $message }}</div>
