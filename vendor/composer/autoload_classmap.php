@@ -50,7 +50,6 @@ return array(
     'App\\Rules\\ValidatePhoneNumber' => $baseDir . '/app/Rules/ValidatePhoneNumber.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Utilities\\Helper' => $baseDir . '/app/Utilities/Helper.php',
-    'App\\Wanted' => $baseDir . '/app/Wanted.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',

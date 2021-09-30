@@ -86,6 +86,46 @@ class HomeController extends Controller
             $listing->save();
         }
 
+        if($request->hasFile('image_4')){
+            $fileName = time(). "_". $request->file('image_4')->getClientOriginalName();
+            $request->file('image_4')->storeAs('public/listings/images', $fileName);
+            $listing->image_4 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_5')){
+            $fileName = time(). "_". $request->file('image_5')->getClientOriginalName();
+            $request->file('image_5')->storeAs('public/listings/images', $fileName);
+            $listing->image_5 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_6')){
+            $fileName = time(). "_". $request->file('image_6')->getClientOriginalName();
+            $request->file('image_6')->storeAs('public/listings/images', $fileName);
+            $listing->image_6 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_7')){
+            $fileName = time(). "_". $request->file('image_7')->getClientOriginalName();
+            $request->file('image_7')->storeAs('public/listings/images', $fileName);
+            $listing->image_7 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_8')){
+            $fileName = time(). "_". $request->file('image_8')->getClientOriginalName();
+            $request->file('image_8')->storeAs('public/listings/images', $fileName);
+            $listing->image_8 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_9')){
+            $fileName = time(). "_". $request->file('image_9')->getClientOriginalName();
+            $request->file('image_9')->storeAs('public/listings/images', $fileName);
+            $listing->image_9 = $fileName;
+            $listing->save();
+        }
+
 
         return back()->with([
             'feedback' => 'true',
@@ -97,10 +137,21 @@ class HomeController extends Controller
 
     public function category($category)
     {
-        $pageTitle = "Category";
-        return view('category')
-            ->withCategory($category)
-            ->withPageTitle($pageTitle);
+        $categoryObj = Category::where('category', $category)->first();
+
+        $listings = Listing::where('category', $categoryObj->id)
+                                ->paginate(15);
+
+
+        $pageTitle = $listings->total() . " results found.";
+
+        return view('search')
+            ->with([
+                'prevCategory' => $categoryObj->id,
+                'prevSearch' => "",
+                'listings' => $listings,
+                'pageTitle' => $pageTitle,
+            ]);
     }
 
     public function listingShow($slug)
@@ -176,7 +227,7 @@ class HomeController extends Controller
 
         $pageTitle = $listings->total() . " results found.";
 
-        return view('index')
+        return view('search')
             ->with([
                 'prevCategory' => $category,
                 'prevSearch' => $search,

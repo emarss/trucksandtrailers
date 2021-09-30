@@ -93,6 +93,46 @@ class ListingController extends Controller
             $listing->save();
         }
 
+        if($request->hasFile('image_4')){
+            $fileName = time(). "_". $request->file('image_4')->getClientOriginalName();
+            $request->file('image_4')->storeAs('public/listings/images', $fileName);
+            $listing->image_4 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_5')){
+            $fileName = time(). "_". $request->file('image_5')->getClientOriginalName();
+            $request->file('image_5')->storeAs('public/listings/images', $fileName);
+            $listing->image_5 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_6')){
+            $fileName = time(). "_". $request->file('image_6')->getClientOriginalName();
+            $request->file('image_6')->storeAs('public/listings/images', $fileName);
+            $listing->image_6 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_7')){
+            $fileName = time(). "_". $request->file('image_7')->getClientOriginalName();
+            $request->file('image_7')->storeAs('public/listings/images', $fileName);
+            $listing->image_7 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_8')){
+            $fileName = time(). "_". $request->file('image_8')->getClientOriginalName();
+            $request->file('image_8')->storeAs('public/listings/images', $fileName);
+            $listing->image_8 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_9')){
+            $fileName = time(). "_". $request->file('image_9')->getClientOriginalName();
+            $request->file('image_9')->storeAs('public/listings/images', $fileName);
+            $listing->image_9 = $fileName;
+            $listing->save();
+        }
+
         return redirect()
                     ->route('admin.listings.index')
                     ->with([
@@ -186,6 +226,46 @@ class ListingController extends Controller
             $fileName = time(). "_". $request->file('image_3')->getClientOriginalName();
             $request->file('image_3')->storeAs('public/listings/images', $fileName);
             $listing->image_3 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_4')){
+            $fileName = time(). "_". $request->file('image_4')->getClientOriginalName();
+            $request->file('image_4')->storeAs('public/listings/images', $fileName);
+            $listing->image_4 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_5')){
+            $fileName = time(). "_". $request->file('image_5')->getClientOriginalName();
+            $request->file('image_5')->storeAs('public/listings/images', $fileName);
+            $listing->image_5 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_6')){
+            $fileName = time(). "_". $request->file('image_6')->getClientOriginalName();
+            $request->file('image_6')->storeAs('public/listings/images', $fileName);
+            $listing->image_6 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_7')){
+            $fileName = time(). "_". $request->file('image_7')->getClientOriginalName();
+            $request->file('image_7')->storeAs('public/listings/images', $fileName);
+            $listing->image_7 = $fileName;
+            $listing->save();
+        }
+        if($request->hasFile('image_8')){
+            $fileName = time(). "_". $request->file('image_8')->getClientOriginalName();
+            $request->file('image_8')->storeAs('public/listings/images', $fileName);
+            $listing->image_8 = $fileName;
+            $listing->save();
+        }
+
+        if($request->hasFile('image_9')){
+            $fileName = time(). "_". $request->file('image_9')->getClientOriginalName();
+            $request->file('image_9')->storeAs('public/listings/images', $fileName);
+            $listing->image_9 = $fileName;
             $listing->save();
         }
 

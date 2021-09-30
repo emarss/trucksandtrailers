@@ -1,5 +1,5 @@
 <script src="{{ asset('js/common_scripts.js') }}"></script>
-<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 <script src="{{ asset('js/markerclusterer.js') }}"></script>
 
 

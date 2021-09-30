@@ -125,7 +125,7 @@
                 </div>
                
                 <div class="card-header">
-                    <h4 class="card-title"><b>Featured Image</b></h4>
+                    <h4 class="card-title"><b>Images</b></h4>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-4">
@@ -157,6 +157,73 @@
                         </p>
                     </div>
                 </div>
+                <div class="card-body row">
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_4) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_4") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_5) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_5") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_6) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_6") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_7) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_7") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_8) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_8") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="card-text">
+                            @if (strlen($listing->image_9) != 0)
+                                <img src="{{ Storage::url("public/listings/images/$listing->image_9") }}"
+                                    alt="{{ $listing->title }}" height="200">
+                            @else
+                                <span class="text-info">Not available</span>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card-header">

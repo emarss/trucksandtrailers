@@ -622,7 +622,6 @@ class ComposerStaticInitf76da30f1c8057dea78c51504fbaefda
         'App\\Rules\\ValidatePhoneNumber' => __DIR__ . '/../..' . '/app/Rules/ValidatePhoneNumber.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Utilities\\Helper' => __DIR__ . '/../..' . '/app/Utilities/Helper.php',
-        'App\\Wanted' => __DIR__ . '/../..' . '/app/Wanted.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',

@@ -46,31 +46,30 @@
         <!-- /row -->
     </div>
     <!-- /container -->
-    <!-- search_mobile -->
-    <div class="layer"></div>
-    <div id="search_mobile">
-        <a href="#" class="side_panel"><i class="icon_close"></i></a>
-        <div class="custom-search-input-2">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="What are you looking..">
-                <i class="icon_search"></i>
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Where">
-                <i class="icon_pin_alt"></i>
-            </div>
-            <select class="wide">
-                <option>All Categories</option>
-                <option>Trucks</option>
-                <option>Trailers</option>
-                <option>Machinery</option>
-                <option>Farm</option>
-                <option>Spares</option>
-                <option>Services</option>
-            </select>
-            <input type="submit">
+        <!-- search_mobile -->
+        <div class="layer"></div>
+        <div id="search_mobile">
+            <a href="#" class="side_panel"><i class="icon_close"></i></a>
+            <form action="{{ route('search') }}" method="POST" class="custom-search-input-2">
+                @csrf
+                <div class="form-group">
+                    <input @isset($prevSearch) value="{{ $prevSearch }}" @endisset class="form-control"
+                                        name="search" type="text" placeholder="What are you looking for...">
+                    <i class="icon_search"></i>
+                </div>
+               
+                <select name="category" class="wide">
+                    <option value="">All Categories</option>
+                    @foreach (App\Category::all() as $category)
+                        <option @isset($prevCategory)
+                            {{ $prevCategory == $category->id ? 'selected' : '' }} @endisset
+                            value="{{ $category->id }}">{{ ucwords($category->category) }}
+                        </option>
+                    @endforeach
+                </select>
+                <input type="submit">
+            </form>
         </div>
-    </div>
-    <!-- /search_mobile -->
+        <!-- /search_mobile -->
 </header>
 <!-- /header -->

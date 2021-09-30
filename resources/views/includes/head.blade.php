@@ -11,7 +11,7 @@
 <!-- GOOGLE WEB FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 <link href="{{ asset('css/vendors.css') }}" rel="stylesheet">
 
 <!-- YOUR CUSTOM CSS -->

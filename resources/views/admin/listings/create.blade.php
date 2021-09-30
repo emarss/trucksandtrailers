@@ -182,6 +182,78 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_4') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_4">
+                                <label class="custom-file-label" for="image_4">Choose file</label>
+                            </div>
+                            @error('image_4')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_5') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_5">
+                                <label class="custom-file-label" for="image_5">Choose file</label>
+                            </div>
+                            @error('image_5')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_6') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_6">
+                                <label class="custom-file-label" for="image_6">Choose file</label>
+                            </div>
+                            @error('image_6')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_7') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_7">
+                                <label class="custom-file-label" for="image_7">Choose file</label>
+                            </div>
+                            @error('image_7')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_8') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_8">
+                                <label class="custom-file-label" for="image_8">Choose file</label>
+                            </div>
+                            @error('image_8')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-control-label" for="title">Select Another Image <i>(Optional)</i></label>
+                            <div class="custom-file">
+                                <input value="{{ old('image_9') }}" type="file" accept="image/*"
+                                    class="custom-file-input" name="image_9">
+                                <label class="custom-file-label" for="image_9">Choose file</label>
+                            </div>
+                            @error('image_9')
+                                <div class="text-danger my-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                     
 
                     <div class="form-group">

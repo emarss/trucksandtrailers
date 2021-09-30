@@ -2,47 +2,71 @@
 @section('title', $pageTitle)
 @section('content')
     <main>
-        <div id="results">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-10">
-                        <h4>{{ $pageTitle }}</h4>
-                    </div>
-                    <div class="col-md-8 col-2">
-                        <a href="#0" class="side_panel btn_search_mobile"></a>
-                        <!-- /open search panel -->
-                        <form method="POST" action="{{ route('search') }}"
-                            class="row no-gutters custom-search-input-2 inner">
-                            @csrf
+        <section class="hero_single version_4">
+            <div class="wrapper">
+                <div class="container">
+                    <h3>Find what you need!</h3>
+                    <p>Explore the most reliable market for trucks and trailers in Zimbabwe.</p>
+                    <form method="POST" action="{{ route('search') }}">
+                        @csrf
+                        <div class="row no-gutters custom-search-input-2">
                             <div class="col-lg-7">
                                 <div class="form-group">
-                                    <input @isset($prevSearch) value="{{ $prevSearch }}"
-                                    @endisset  class="form-control" name="search" type="text"
-                                        placeholder="What are you looking for...">
+                                    <input @isset($prevSearch) value="{{ $prevSearch }}" @endisset class="form-control"
+                                        name="search" type="text" placeholder="What are you looking for...">
                                     <i class="icon_search"></i>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-3">
                                 <select name="category" class="wide">
                                     <option value="">All Categories</option>
                                     @foreach (App\Category::all() as $category)
-                                        <option @isset($prevCategory) {{ $prevCategory == $category->id ? 'selected' : '' }}
-                                            @endisset value="{{ $category->id }}">{{ ucwords($category->category) }}
+                                        <option @isset($prevCategory)
+                                            {{ $prevCategory == $category->id ? 'selected' : '' }} @endisset
+                                            value="{{ $category->id }}">{{ ucwords($category->category) }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-lg-1">
-                                <input type="submit">
+                            <div class="col-lg-2">
+                                <input type="submit" value="Search">
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <!-- /row -->
+                    </form>
+                    <ul class="counter">
+                        <li>Buy and Sell Trucks & Trailers.</li>
+                    </ul>
                 </div>
-                <!-- /row -->
             </div>
-            <!-- /container -->
-        </div>
+        </section>
+        <!-- /hero_single -->
+
+        @if (App\Category::all()->count() != 0)
+            <div class="bg_color_1">
+                <div class="container margin_80_55">
+                    <div class="main_title_2">
+                        <span><em></em></span>
+                        <h2>Popular Categories</h2>
+                        <p>The most popular categories of listings.</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        @foreach (App\Category::all() as $category)
+                            <div class="col-lg-2 col-md-4 col-6">
+                                <a href="{{ route('category', $category->category) }}" class="box_cat_home">
+                                    <img height="60px" src="{{ "/img/icons/". Str::slug($category->category) .".png" }}" >
+                                    <h3>{{ ucwords($category->category) }}</h3>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /bg_color_1 -->
+        @endif
 
         <!-- /results -->
         {{-- <div class="filters_listing sticky_horizontal">
