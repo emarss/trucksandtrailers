@@ -40,6 +40,12 @@ class EditListingRequests extends FormRequest
             'featured_image' => 'nullable|image|max:20480',
             'image_2' => 'nullable|image|max:20480',
             'image_3' => 'nullable|image|max:20480',
+            'image_4' => 'nullable|image|max:20480',
+            'image_5' => 'nullable|image|max:20480',
+            'image_6' => 'nullable|image|max:20480',
+            'image_7' => 'nullable|image|max:20480',
+            'image_8' => 'nullable|image|max:20480',
+            'image_9' => 'nullable|image|max:20480',
         ];
     }
 }

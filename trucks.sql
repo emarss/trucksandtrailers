@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Linux (x86_64)
 --
 -- Host: localhost    Database: trucks
 -- ------------------------------------------------------
--- Server version	8.0.25-0ubuntu0.20.04.1
+-- Server version	8.0.28-0ubuntu0.20.04.3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'trucks','2021-08-18 08:42:55','2021-08-18 08:42:55'),(2,'trailers','2021-08-18 08:42:55','2021-08-18 08:42:55'),(3,'machinery','2021-08-18 08:42:55','2021-08-18 08:42:55'),(4,'farm equipment','2021-08-18 08:42:55','2021-08-18 08:42:55'),(5,'spares','2021-08-18 08:42:55','2021-08-18 08:42:55'),(6,'services','2021-08-18 08:42:55','2021-08-18 08:42:55');
+INSERT INTO `categories` VALUES (1,'trucks','2022-05-09 21:58:06','2022-05-09 21:58:06'),(2,'trailers','2022-05-09 21:58:06','2022-05-09 21:58:06'),(3,'machinery','2022-05-09 21:58:06','2022-05-09 21:58:06'),(4,'farm equipment','2022-05-09 21:58:06','2022-05-09 21:58:06'),(5,'spares','2022-05-09 21:58:06','2022-05-09 21:58:06'),(6,'services','2022-05-09 21:58:06','2022-05-09 21:58:06');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,8 +124,14 @@ CREATE TABLE `listings` (
   `image_3` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `image_4` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_5` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_6` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_7` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_8` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_9` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,6 +140,7 @@ CREATE TABLE `listings` (
 
 LOCK TABLES `listings` WRITE;
 /*!40000 ALTER TABLE `listings` DISABLE KEYS */;
+INSERT INTO `listings` VALUES (1,2,'scania-truck','Scania Truck','<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p><br></p>','new','+263774671339','+263774671339','rufarosithole4@gmail.com','Mutare','1','120000',1,'USD','1','1652141247_Coming Soon-with logo.png','1652141247_struggle-with-subjects-two.png','1652141247_struggle-with-subjects.png','2022-05-09 22:07:27','2022-05-09 22:07:27',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `listings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +171,7 @@ CREATE TABLE `media` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `media_model_type_model_id_index` (`model_type`,`model_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,6 +180,7 @@ CREATE TABLE `media` (
 
 LOCK TABLES `media` WRITE;
 /*!40000 ALTER TABLE `media` DISABLE KEYS */;
+INSERT INTO `media` VALUES (1,'App\\Listing',1,'952941ed-066b-46ec-9eb6-9cc0a907dc1f','thumb','Coming Soon-with logo','Coming-Soon-with-logo.png','image/png','public','public',536033,'[]','{\"generated_conversions\":{\"thumb\":true}}','[]',1,'2022-05-09 22:07:27','2022-05-09 22:07:27');
 /*!40000 ALTER TABLE `media` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +196,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -197,7 +205,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (37,'2014_10_12_000000_create_users_table',1),(38,'2014_10_12_100000_create_password_resets_table',1),(39,'2019_08_19_000000_create_failed_jobs_table',1),(40,'2020_08_31_114020_create_profiles_table',1),(41,'2020_08_31_114244_create_media_table',1),(42,'2020_09_13_130119_create_feedback_table',1),(43,'2020_09_13_130133_create_newsletters_table',1),(44,'2021_08_16_111326_create_listings_table',1),(45,'2021_08_16_130528_create_categories_table',1);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2020_08_31_114020_create_profiles_table',1),(5,'2020_08_31_114244_create_media_table',1),(6,'2020_09_13_130119_create_feedback_table',1),(7,'2020_09_13_130133_create_newsletters_table',1),(8,'2021_08_16_111326_create_listings_table',1),(9,'2021_08_16_130528_create_categories_table',1),(10,'2021_09_19_173402_add_six_columns_to_listings_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +288,7 @@ CREATE TABLE `profiles` (
 
 LOCK TABLES `profiles` WRITE;
 /*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
-INSERT INTO `profiles` VALUES (1,1,'admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2021-08-18 08:42:55','2021-08-18 08:42:55'),(2,2,'admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2021-08-18 08:42:55','2021-08-18 08:42:55');
+INSERT INTO `profiles` VALUES (1,1,'admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-05-09 21:58:06','2022-05-09 21:58:06'),(2,2,'admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-05-09 21:58:06','2022-05-09 21:58:06');
 /*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,7 +319,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Guest User','guest@trucksandtrailers.co.zw',NULL,'$2y$10$QXA7YQudQjzoaSERHCa2wuWVjQ76ckWf.d2uHG8OjDbWhr9A1jBPK',NULL,'2021-08-18 08:42:55','2021-08-18 08:42:55'),(2,'Rufaro Sithole','rufarosithole4@gmail.com',NULL,'$2y$10$uxqAMPGHcWhi5lO0Ac7IcOJj8rtayV3Nadid7KkQnaIhAJcswE8l.',NULL,'2021-08-18 08:42:55','2021-08-18 08:42:55');
+INSERT INTO `users` VALUES (1,'Guest User','guest@trucksandtrailers.co.zw',NULL,'$2y$10$51NDH15HtV25XF5RHt0cJuzHvd/6JWNY79OJF3dbgufdWr50xZ4Ia',NULL,'2022-05-09 21:58:06','2022-05-09 21:58:06'),(2,'Rufaro Sithole','rufarosithole4@gmail.com',NULL,'$2y$10$QGKQXaNkVz.9jHJ3.NpyKeIVmZzX7H7Mbsv3LEPuNkw9kPdG7KKfW',NULL,'2022-05-09 21:58:06','2022-05-09 21:58:06');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -324,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-18 13:01:00
+-- Dump completed on 2022-05-10  2:11:51
